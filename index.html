@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="briefing">
+  <title>Sociologia · 1º Ano EM — Colégio Divina Providência | Dossiê de Revisão</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces: warm stone-white paper */
+      --background: #faf9f5;
+      --surface-container-low: #ffffff;
+      --surface-container: #f1efe8;
+      --surface-container-high: #e6e2d6;
+
+      /* Ink */
+      --on-surface: #17181a;
+      --on-surface-variant: #56585c;
+
+      /* Rules */
+      --outline: #17181a;
+      --outline-variant: #dedad0;
+      --border-muted: #c8c4b8;
+
+      /* Accents */
+      --primary: #17181a;
+      --on-primary: #faf9f5;
+      --primary-container: #f2b705;
+      --on-primary-container: #17181a;
+      --secondary: #1f4e5f;
+      --on-secondary: #ffffff;
+      --secondary-container: #e4eef2;
+      --tertiary: #785008;
+      --chip-bg: #f5e6c4;
+      --error: #b42318;
+      --on-error: #ffffff;
+      --error-container: #fdeceb;
+
+      /* Semantic */
+      --positive: #2b6e52;
+      --positive-container: #e6f2ec;
+      --warning: #785008;
+      --warning-container: #f5e6c4;
+      --focus: #1f4e5f;
+
+      /* Data series */
+      --data-1: #1f4e5f;
+      --data-2: #d99000;
+      --data-3: #2b6e52;
+      --data-4: #b84a39;
+      --data-context: #c4bfb2;
+
+      /* Fonts */
+      --font-headline: 'Source Serif 4', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-label: 'Geist Mono', monospace;
+
+      /* Shape */
+      --rounded: 0.25rem;
+      --rounded-lg: 0.375rem;
+      --rounded-full: 0.25rem;
+      --badge-radius: 2px;
+
+      /* Style effects */
+      --section-rule: 1.5px solid var(--outline);
+      --card-border: 1px solid var(--outline-variant);
+      --secondary-btn-border: 1px solid var(--border-muted);
+      --heading-tracking: -0.02em;
+      --label-tracking: 0.08em;
+
+      /* Type scale (Narrative) */
+      --display-size: clamp(2.15rem, 1.4rem + 2.8vw, 3.35rem);
+      --headline-size: clamp(1.65rem, 1.2rem + 1.5vw, 2.25rem);
+      --subhead-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
+      --body-size: clamp(1rem, 0.96rem + 0.2vw, 1.09375rem);
+      --label-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-xl);
+      padding: var(--space-lg);
+      max-width: 1120px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Focus rings */
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* Typography helpers */
+    h1, h2, h3, h4 {
+      margin: 0;
+      color: var(--on-surface);
+    }
+    p {
+      margin: 0 0 var(--space-md) 0;
+      max-width: 68ch;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    .title {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--display-size);
+      letter-spacing: var(--heading-tracking);
+      line-height: 1.08;
+      color: var(--on-surface);
+    }
+    .section-title {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--headline-size);
+      letter-spacing: var(--heading-tracking);
+      line-height: 1.14;
+    }
+    .subhead {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: var(--subhead-size);
+      letter-spacing: -0.01em;
+      line-height: 1.24;
+    }
+    .standfirst {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+      line-height: 1.48;
+      color: var(--secondary);
+      margin-top: var(--space-sm);
+      max-width: 68ch;
+    }
+
+    /* Briefing Treatment 1: Dossier bar + signal-gold pill */
+    .dossier-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: var(--section-rule);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .dossier-bar-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .dossier-pill {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.6875rem;
+      letter-spacing: var(--label-tracking);
+      text-transform: uppercase;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--badge-radius);
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.2;
+    }
+    .dossier-meta {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 500;
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Briefing Treatment 3: Crisp white bordered figure cards */
+    .figure-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+    .figure-card .value {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(1.65rem, 1.3rem + 1vw, 2.2rem);
+      font-variant-numeric: lining-nums tabular-nums;
+      line-height: 1.1;
+      color: var(--on-surface);
+    }
+
+    /* Briefing Treatment 4: Numbered index badges */
+    .index-num {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      color: var(--secondary);
+      background: var(--surface-container);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--badge-radius);
+      letter-spacing: 0.06em;
+      display: inline-block;
+    }
+
+    /* Briefing Treatment 5: Warm stone sidebar / methodology callout */
+    .aside-box {
+      background: var(--surface-container);
+      border-top: var(--section-rule);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: 0 0 var(--rounded-lg) var(--rounded-lg);
+    }
+    .aside-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: var(--label-tracking);
+      color: var(--tertiary);
+      margin-bottom: var(--space-xs);
+      display: block;
+    }
+
+    /* Tags & Chips */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-label);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--rounded);
+      background: var(--chip-bg);
+      color: var(--tertiary);
+    }
+    .tag-slate {
+      background: var(--secondary-container);
+      color: var(--secondary);
+    }
+    .tag-positive {
+      background: var(--positive-container);
+      color: var(--positive);
+    }
+
+    /* Buttons */
+    .btn {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      min-height: 44px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      border: 1px solid transparent;
+      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--secondary);
+    }
+    .btn-secondary {
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      border: var(--secondary-btn-border);
+    }
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--surface-container);
+    }
+    .btn-reviewed {
+      background: var(--positive-container);
+      color: var(--positive);
+      border: 1px solid var(--positive);
+    }
+    .btn-reviewed:hover:not(:disabled) {
+      background: var(--surface-container);
+      color: var(--on-surface);
+    }
+
+    /* Opening Header & Progress Dashboard Strip */
+    .hero-header {
+      padding-top: var(--space-sm);
+    }
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .kpi-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface-variant);
+      margin-bottom: var(--space-xs);
+    }
+    .kpi-sub {
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+      margin-top: var(--space-xs);
+    }
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: var(--surface-container-high);
+      border-radius: var(--badge-radius);
+      overflow: hidden;
+      margin-top: var(--space-sm);
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--secondary);
+      width: 0%;
+      transition: width var(--dur-short) var(--ease-out);
+    }
+
+    /* Study Index Navigation */
+    .index-nav {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+    }
+    .index-nav-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+    .index-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .index-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-sm);
+      border: var(--card-border);
+      border-radius: var(--rounded);
+      background: var(--background);
+      color: var(--on-surface);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+    }
+    .index-link:hover {
+      background: var(--surface-container);
+    }
+    .index-link-code {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--secondary);
+    }
+    .index-link.is-done {
+      background: var(--positive-container);
+      color: var(--positive);
+    }
+
+    /* Section Architecture */
+    .study-section {
+      padding-top: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+    .split-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+
+    /* Quote Block */
+    .source-quote {
+      border-left: 3px solid var(--primary-container);
+      background: var(--surface-container-low);
+      padding: var(--space-md) var(--space-lg);
+      margin: var(--space-md) 0;
+      border-radius: 0 var(--rounded-lg) var(--rounded-lg) 0;
+      border-top: var(--card-border);
+      border-right: var(--card-border);
+      border-bottom: var(--card-border);
+    }
+    .source-quote blockquote {
+      margin: 0;
+      font-family: var(--font-headline);
+      font-style: italic;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      color: var(--on-surface);
+    }
+    .source-quote figcaption {
+      margin-top: var(--space-sm);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Segmented / Stepper Controls inside interactive modules */
+    .segment-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .segment-btn {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.875rem;
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      border: var(--secondary-btn-border);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+    }
+    .segment-btn:hover {
+      background: var(--surface-container);
+    }
+    .segment-btn.is-active {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+    }
+    table.dossier-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9375rem;
+    }
+    table.dossier-table th {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface);
+      background: var(--surface-container);
+      border-bottom: var(--section-rule);
+      padding: var(--space-md);
+    }
+    table.dossier-table td {
+      padding: var(--space-md);
+      border-bottom: var(--card-border);
+      vertical-align: top;
+    }
+    table.dossier-table tr:last-child td {
+      border-bottom: none;
+    }
+    table.dossier-table tr.is-highlighted {
+      background: var(--secondary-container);
+    }
+
+    /* Gramsci Schematic Diagram */
+    .diagram-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: stretch;
+    }
+    .diagram-nodes {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-sm);
+    }
+    .node-btn {
+      width: 100%;
+      text-align: left;
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      min-height: 44px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      font-family: var(--font-body);
+      color: var(--on-surface);
+      transition: background-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .node-btn:hover {
+      background: var(--surface-container);
+    }
+    .node-btn.is-active {
+      background: var(--secondary);
+      color: var(--on-secondary);
+      box-shadow: 0 0 0 2px var(--secondary);
+    }
+    .node-btn.is-active .node-code {
+      color: var(--primary-container);
+    }
+    .node-code {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      color: var(--secondary);
+      text-transform: uppercase;
+    }
+    .node-title {
+      font-weight: 700;
+      font-size: 0.96875rem;
+    }
+
+    /* Concept Lab (Case Analyzer) */
+    .case-option-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    .case-choice-btn {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--background);
+      color: var(--on-surface);
+      border: var(--secondary-btn-border);
+      border-radius: var(--rounded);
+      cursor: pointer;
+      text-align: left;
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .case-choice-btn:hover:not(:disabled) {
+      background: var(--surface-container);
+    }
+    .case-choice-btn.is-correct {
+      background: var(--positive-container);
+      color: var(--positive);
+      border-color: var(--positive);
+    }
+    .case-choice-btn.is-wrong {
+      background: var(--error-container);
+      color: var(--error);
+      border-color: var(--error);
+    }
+
+    /* Glossary Search & Filter */
+    .filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      align-items: end;
+      margin-bottom: var(--space-md);
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      flex: 1 1 240px;
+    }
+    .field-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface);
+    }
+    .text-input, .select-input {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      border: var(--secondary-btn-border);
+      border-radius: var(--rounded);
+      width: 100%;
+    }
+    .select-input {
+      padding-right: var(--space-xl);
+    }
+
+    /* Quiz / Simulado */
+    .quiz-card {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .quiz-opt-btn {
+      width: 100%;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      border: var(--secondary-btn-border);
+      background: var(--background);
+      color: var(--on-surface);
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      transition: background-color var(--dur-micro) var(--ease-out);
+    }
+    .quiz-opt-btn:hover:not(:disabled) {
+      background: var(--surface-container);
+    }
+    .quiz-opt-btn.is-correct {
+      background: var(--positive-container);
+      color: var(--positive);
+      border-color: var(--positive);
+    }
+    .quiz-opt-btn.is-wrong {
+      background: var(--error-container);
+      color: var(--error);
+      border-color: var(--error);
+    }
+    .quiz-letter {
+      font-family: var(--font-label);
+      font-weight: 600;
+      font-size: var(--label-size);
+      min-width: 1.5rem;
+      padding-top: 0.15rem;
+    }
+    .feedback-box {
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+      font-size: 0.9375rem;
+      border-left: 3px solid var(--secondary);
+      background: var(--surface-container);
+    }
+    .feedback-box.is-correct {
+      background: var(--positive-container);
+      border-left-color: var(--positive);
+      color: var(--on-surface);
+    }
+    .feedback-box.is-wrong {
+      background: var(--error-container);
+      border-left-color: var(--error);
+      color: var(--on-surface);
+    }
+
+    /* Footer */
+    .dossier-footer {
+      border-top: var(--section-rule);
+      padding: var(--space-lg) 0 var(--space-xl);
+      font-size: 0.875rem;
+      color: var(--on-surface-variant);
+    }
+
+    /* Reveal animation */
+    .reveal-ready {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+    }
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Container queries */
+    .card-wrapper { container-type: inline-size; }
+    @container (max-width: 460px) {
+      .figure-card { padding: var(--space-md); }
+    }
+
+    @media (max-width: 780px) {
+      .split-layout,
+      .diagram-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-grid {
+        padding: var(--space-md);
+        gap: var(--space-lg);
+      }
+      .kpi-strip {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-grid">
+
+    <!-- OPENING HEADER -->
+    <header class="hero-header">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="dossier-pill">SOCIOLOGIA · 1º ANO EM</span>
+          <span class="dossier-meta">COLÉGIO DIVINA PROVIDÊNCIA · GUIA DE PREPARAÇÃO PARA A PROVA</span>
+        </div>
+        <span class="dossier-meta">06 MÓDULOS · 10 QUESTÕES</span>
+      </div>
+
+      <h1 class="title">Cultura, Poder e Sociedade Midiática: Dossiê de Revisão</h1>
+      <p class="standfirst">
+        Do conceito antropológico de alteridade à indústria cultural de Adorno e Horkheimer, à hegemonia em Gramsci e à proteção da memória coletiva — tudo o que você precisa dominar para a avaliação de Sociologia.
+      </p>
+
+      <!-- Live Progress Strip -->
+      <div class="kpi-strip" aria-label="Painel de progresso de estudo">
+        <div class="figure-card">
+          <div class="kpi-label">Módulos Revisados</div>
+          <div class="value" id="kpi-modules">0 / 6</div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progress-modules"></div>
+          </div>
+          <div class="kpi-sub" id="kpi-modules-note">Marque cada seção ao concluir a leitura.</div>
+        </div>
+
+        <div class="figure-card">
+          <div class="kpi-label">Simulado da Prova</div>
+          <div class="value" id="kpi-quiz">0 / 10</div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progress-quiz"></div>
+          </div>
+          <div class="kpi-sub" id="kpi-quiz-note">Nenhuma questão respondida ainda.</div>
+        </div>
+
+        <div class="figure-card">
+          <div class="kpi-label">Laboratório de Casos</div>
+          <div class="value" id="kpi-lab">0 / 6</div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progress-lab"></div>
+          </div>
+          <div class="kpi-sub" id="kpi-lab-note">Analise exemplos reais de prova.</div>
+        </div>
+
+        <div class="figure-card">
+          <div class="kpi-label">Resumo de Estudo</div>
+          <div style="margin-top: var(--space-xs); display: flex; flex-direction: column; gap: var(--space-sm);">
+            <button type="button" class="btn btn-primary" onclick="exportStudySummary()">Exportar Relatório (.txt)</button>
+            <button type="button" class="btn btn-secondary" id="reset-all-btn" onclick="resetAllProgress(this)">Zerar Progresso</button>
+          </div>
+          <div class="kpi-sub" id="export-status" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION INDEX (Scroll Anchors) -->
+    <nav class="index-nav" aria-label="Índice dos módulos de revisão">
+      <div class="index-nav-header">
+        <span class="field-label">Roteiro de Estudo em Sequência</span>
+        <span class="dossier-meta">CLIQUE PARA IR DIRETO AO TÓPICO</span>
+      </div>
+      <ul class="index-links" id="module-nav-list">
+        <li><a class="index-link" href="#mod-1" data-nav-mod="mod-1"><span class="index-link-code">01</span> Cultura &amp; Antropologia</a></li>
+        <li><a class="index-link" href="#mod-2" data-nav-mod="mod-2"><span class="index-link-code">02</span> Cultura, Poder &amp; Saber</a></li>
+        <li><a class="index-link" href="#mod-3" data-nav-mod="mod-3"><span class="index-link-code">03</span> Erudita, Popular &amp; Mídia</a></li>
+        <li><a class="index-link" href="#mod-4" data-nav-mod="mod-4"><span class="index-link-code">04</span> Indústria Cultural &amp; Resistência</a></li>
+        <li><a class="index-link" href="#mod-5" data-nav-mod="mod-5"><span class="index-link-code">05</span> Diversidade &amp; Memória</a></li>
+        <li><a class="index-link" href="#mod-6" data-nav-mod="mod-6"><span class="index-link-code">06</span> Hegemonia em Gramsci</a></li>
+        <li><a class="index-link" href="#simulado"><span class="index-link-code">07</span> Simulado Comentado</a></li>
+      </ul>
+    </nav>
+
+    <!-- MODULE 01: CULTURA, CONHECIMENTO E ANTROPOLOGIA -->
+    <section class="study-section" id="mod-1" aria-labelledby="title-mod-1">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">01</span>
+          <span class="dossier-pill">FUNDAMENTOS</span>
+          <span class="dossier-meta">CULTURA · CONHECIMENTO · ANTROPOLOGIA</span>
+        </div>
+        <button type="button" class="btn btn-secondary" data-review-btn="mod-1" onclick="toggleModuleReviewed('mod-1')">Marcar como revisado</button>
+      </div>
+
+      <h2 class="section-title" id="title-mod-1">Cultura não é erudição individual: é modo de vida, alteridade e saber coletivo</h2>
+
+      <div class="split-layout">
+        <div>
+          <p>
+            No <strong>senso comum</strong>, costuma-se chamar de “culta” a pessoa que lê livros, estuda artes, domina idiomas ou acompanha a política. Na <strong>Antropologia</strong> — definida como a “ciência do ser humano” em suas manifestações artísticas, religiosas, políticas, familiares e simbólicas, em contraste com a Sociologia (“ciência da sociedade”) —, o conceito é muito mais amplo: <strong>cultura</strong> é o conjunto de modos de vida, padrões de comportamento, línguas, valores e sistemas de crenças compartilhados por um grupo social.
+          </p>
+          <p>
+            Como explica <strong>Waldenyr Caldas</strong> (2008), cultura não se resume a aprender a tocar um instrumento ou ler um livro; nenhum povo age de maneira idêntica à dos demais. Além disso, a identidade de um grupo depende da <strong>alteridade</strong> (do latim <em>alter</em>, “outro”): reconhecemo-nos como grupo justamente ao perceber o outro como diferente. Os indivíduos incorporam essa cultura comum por meio da família, do trabalho, da escola e da língua — muitas vezes de modo inconsciente —, tornando-se simultaneamente <strong>produtos e produtores</strong> de sua cultura.
+          </p>
+          <p>
+            Um motor decisivo das transformações culturais é o <strong>conhecimento</strong>, entendido como o conjunto dinâmico de informações e princípios acumulados pela humanidade. Cada sociedade valoriza determinados saberes acima de outros: nas civilizações pré-colombianas da América, destacavam-se os saberes religiosos e guerreiros; na sociedade ocidental contemporânea, o saber acadêmico das universidades recebe maior prestígio social, embora saberes práticos — como cozinhar, pilotar trens e aviões ou consertar computadores — sejam igualmente vitais para a vida coletiva.
+          </p>
+        </div>
+
+        <aside class="aside-box">
+          <span class="aside-label">Ponto-Chave de Prova · Denys Cuche</span>
+          <h3 class="subhead" style="margin-bottom: var(--space-sm);">Genética igual, escolhas culturais diferentes</h3>
+          <p style="font-size: 0.9375rem;">
+            Para o antropólogo <strong>Denys Cuche</strong> (2002), todas as populações humanas possuem a mesma carga genética, mas diferenciam-se por suas escolhas culturais, inventando soluções próprias para os desafios de sua existência.
+          </p>
+          <p style="font-size: 0.9375rem;">
+            Essas escolhas não nascem de cálculos isolados de um indivíduo: resultam de experiências acumuladas por gerações e permanecem em constante mudança.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-top: var(--space-sm);">
+            <span class="tag">Alteridade</span>
+            <span class="tag tag-slate">Dinamismo Cultural</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Interactive Paradigm Stepper: Evolutionism -> Determinism -> Contemporary Anthropology -->
+      <div class="figure-card">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+          <h3 class="subhead">Linha Evolutiva do Pensamento Antropológico (Séc. XIX ao XXI)</h3>
+          <span class="dossier-meta">SELECIONE UMA FASE PARA COMPARAR</span>
+        </div>
+
+        <div class="segment-group" role="group" aria-label="Fases do pensamento antropológico">
+          <button type="button" class="segment-btn is-active" data-phase="evolucionismo" onclick="selectAnthroPhase('evolucionismo')">1. Evolucionismo &amp; Eurocentrismo (Séc. XIX)</button>
+          <button type="button" class="segment-btn" data-phase="determinismo" onclick="selectAnthroPhase('determinismo')">2. Determinismo Pseudocientífico (XIX–XX)</button>
+          <button type="button" class="segment-btn" data-phase="diversidade" onclick="selectAnthroPhase('diversidade')">3. Unidade na Diversidade (Séc. XX–XXI)</button>
+        </div>
+
+        <div id="anthro-phase-panel" class="aside-box" aria-live="polite">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 02: CULTURA, PODER E CAPITAL CULTURAL -->
+    <section class="study-section" id="mod-2" aria-labelledby="title-mod-2">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">02</span>
+          <span class="dossier-pill">PODER &amp; DESIGUALDADE</span>
+          <span class="dossier-meta">MARILENA CHAUI · MANNHEIM · BOURDIEU</span>
+        </div>
+        <button type="button" class="btn btn-secondary" data-review-btn="mod-2" onclick="toggleModuleReviewed('mod-2')">Marcar como revisado</button>
+      </div>
+
+      <h2 class="section-title" id="title-mod-2">Quando o Saber vira instrumento de Poder: ideologia da competência e capital cultural</h2>
+
+      <p>
+        Em sociedades divididas em classes sociais, a cultura está diretamente ligada às relações de dominação entre classes dominantes e classes subalternas. Um grupo de saberes institucionalizados passa a ser tratado como o <strong>Saber</strong> indiscutível — um “pensamento único” que separa arbitrariamente o “culto” do “inculto”.
+      </p>
+
+      <figure class="source-quote">
+        <blockquote>
+          “[…] a cultura é algo que alguns fazem e possuem enquanto os demais a recebem passivamente. Com essa perspectiva, simplesmente aderimos à forma atual da ideologia, a ideologia da competência, que divide a sociedade entre aqueles que sabem, e por isso mandam, e aqueles que não sabem, e por isso obedecem.”
+        </blockquote>
+        <figcaption>Marilena Chaui — Cidadania cultural: o direito à cultura (2006)</figcaption>
+      </figure>
+
+      <div class="card-grid">
+        <article class="figure-card">
+          <span class="tag" style="margin-bottom: var(--space-sm);">As 3 Conclusões de Chaui</span>
+          <h3 class="subhead" style="margin-bottom: var(--space-sm);">Como a divisão social fragmenta a arte e a cultura</h3>
+          <ul style="margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: var(--space-xs);">
+            <li><strong>Cultura erudita vs. popular:</strong> a erudita (de elite) liga-se a intelectuais e artistas da classe dominante; a popular pertence aos trabalhadores urbanos e rurais.</li>
+            <li><strong>Folclore:</strong> quando a cultura popular é vista apenas como criação do passado nacional (mitos, lendas, danças regionais, artesanato), recebe o rótulo de folclore.</li>
+            <li><strong>Belas-artes:</strong> a arte erudita passa a ser consumida por um público de letrados, associado à escolaridade e ao “bom gosto”.</li>
+          </ul>
+        </article>
+
+        <article class="figure-card">
+          <span class="tag tag-slate" style="margin-bottom: var(--space-sm);">Mannheim &amp; Coerções Culturais</span>
+          <h3 class="subhead" style="margin-bottom: var(--space-sm);">Até o gosto é construído e vigiado socialmente</h3>
+          <p style="font-size: 0.9375rem;">
+            O sociólogo alemão <strong>Karl Mannheim</strong> (2008) observou que as elites evitam democratizar plenamente sua cultura para preservar distinção e distanciamento social.
+          </p>
+          <p style="font-size: 0.9375rem;">
+            Ainda assim, há cruzamentos — como o consumo de música sertaneja ou “caipira de raiz” entre diferentes camadas. Quando um grupo rejeita gostos alheios ou impõe padrões obrigatórios, surgem as chamadas <strong>coerções culturais</strong>.
+          </p>
+        </article>
+
+        <article class="figure-card">
+          <span class="tag tag-positive" style="margin-bottom: var(--space-sm);">Ciência, “Verdade” &amp; Bourdieu</span>
+          <h3 class="subhead" style="margin-bottom: var(--space-sm);">Diplomas, falibilidade científica e capital cultural</h3>
+          <p style="font-size: 0.9375rem;">
+            No Brasil, desde os “doutores” retratados por Machado de Assis, o diploma universitário simboliza acesso ao prestígio. Contudo, a ciência é autoquestionável e revisável — como mostrou a pandemia de covid-19 em 2020, além de previsões econômicas e pesquisas eleitorais.
+          </p>
+          <p style="font-size: 0.9375rem;">
+            Para <strong>Pierre Bourdieu</strong>, a bagagem cultural adquirida principalmente pela educação formal forma o <strong>capital cultural</strong>, funcionando como uma das faces das desigualdades sociais.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MODULE 03: CULTURA ERUDITA, POPULAR E SOCIEDADE MIDIÁTICA -->
+    <section class="study-section" id="mod-3" aria-labelledby="title-mod-3">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">03</span>
+          <span class="dossier-pill">ESFERAS DA CULTURA</span>
+          <span class="dossier-meta">ERUDITA · POPULAR · MASSA · MÍDIA</span>
+        </div>
+        <button type="button" class="btn btn-secondary" data-review-btn="mod-3" onclick="toggleModuleReviewed('mod-3')">Marcar como revisado</button>
+      </div>
+
+      <h2 class="section-title" id="title-mod-3">Cultura erudita, cultura popular e a ascensão da sociedade midiática</h2>
+
+      <div class="split-layout">
+        <div>
+          <p>
+            Durante milênios, a comunicação humana exigia presença face a face, evoluindo depois para sinais de fumaça, pinturas rupestres, escrita e prensa. No século XX, o rádio, o telefone, o cinema, a televisão, a internet e os celulares consolidaram a <strong>sociedade midiática</strong>. O termo <strong>mídia</strong> vem do latim <em>media</em> (plural de <em>medium</em>, “meio intermediário”), mas entrou no português brasileiro pela pronúncia inglesa norte-americana — sinal da própria influência cultural estadunidense, diferentemente de Portugal, onde se diz “os médias”.
+          </p>
+          <p>
+            Para <strong>Marshall McLuhan</strong> (1911–1980), as redes de comunicação concretizaram uma <strong>“aldeia global”</strong> ao encurtar distâncias planetárias; porém, a tecnologia não eliminou as desigualdades nem as relações de dominação. Conforme <strong>Delson Ferreira</strong> (2007), a mídia atua em duas esferas simultâneas: noticia processos relacionais da cultura e da política e propaga a circulação de mercadorias na economia de mercado.
+          </p>
+        </div>
+
+        <aside class="aside-box">
+          <span class="aside-label">Resistência Popular · Antonio Augusto Arantes</span>
+          <p style="font-size: 0.9375rem;">
+            Diferentemente da cultura erudita (ligada à manutenção do <em>status quo</em> e, segundo <strong>Waldenyr Caldas</strong>, obediente à lógica de classe no capitalismo), a <strong>cultura popular</strong> circula nas ruas e na oralidade, fora dos círculos acadêmicos.
+          </p>
+          <p style="font-size: 0.9375rem;">
+            Para <strong>Antonio Augusto Arantes</strong> (2007), ela abrange desde visões que negam nela qualquer “Saber” até interpretações que lhe atribuem um papel ativo de <strong>resistência contra a dominação de classe</strong>.
+          </p>
+        </aside>
+      </div>
+
+      <!-- Interactive Comparison Matrix -->
+      <div class="figure-card">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+          <div>
+            <h3 class="subhead">Matriz Comparativa: Os 4 Campos Culturais</h3>
+            <p style="font-size: 0.9rem; color: var(--on-surface-variant); margin: 0;">Destaque uma dimensão na tabela para comparar lado a lado na revisão.</p>
+          </div>
+          <div class="segment-group" style="margin-bottom: 0;" role="group" aria-label="Filtrar foco na matriz comparativa">
+            <button type="button" class="segment-btn is-active" data-matrix="all" onclick="highlightMatrixRow('all')">Ver tudo</button>
+            <button type="button" class="segment-btn" data-matrix="erudita" onclick="highlightMatrixRow('erudita')">Erudita</button>
+            <button type="button" class="segment-btn" data-matrix="popular" onclick="highlightMatrixRow('popular')">Popular</button>
+            <button type="button" class="segment-btn" data-matrix="massa" onclick="highlightMatrixRow('massa')">Indústria / Pop</button>
+            <button type="button" class="segment-btn" data-matrix="contra" onclick="highlightMatrixRow('contra')">Contracultura</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="dossier-table">
+            <thead>
+              <tr>
+                <th scope="col">Categoria</th>
+                <th scope="col">Origem e Produtores</th>
+                <th scope="col">Relação com o Poder</th>
+                <th scope="col">Características Centrais</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-tbody">
+              <tr data-row="erudita">
+                <td><strong>Cultura Erudita</strong><br><span class="dossier-meta">Caldas / Chaui</span></td>
+                <td>Elites letradas, academias e instituições formais.</td>
+                <td>Conservadora; preserva o <em>status quo</em> e o prestígio social.</td>
+                <td>Exige instrução prévia; resiste ao tempo; associada às belas-artes e ao “bom gosto”.</td>
+              </tr>
+              <tr data-row="popular">
+                <td><strong>Cultura Popular</strong><br><span class="dossier-meta">Arantes / Coelho</span></td>
+                <td>Trabalhadores urbanos e rurais; comunidades locais.</td>
+                <td>Pode oscilar entre exclusão, tradição (folclore) e resistência política.</td>
+                <td>Transmissão oral e cotidiana; valor de uso (produzida por quem consome); dinâmica.</td>
+              </tr>
+              <tr data-row="massa">
+                <td><strong>Indústria Cultural &amp; Pop</strong><br><span class="dossier-meta">Adorno / Horkheimer / Morin</span></td>
+                <td>Poucos centros produtores das elites midiáticas para milhões de receptores.</td>
+                <td>Reitera valores institucionalizados; visa lucro, padronização e alienação.</td>
+                <td>Produção em série (reificação); cultura pop voltada sobretudo aos jovens; valor de troca.</td>
+              </tr>
+              <tr data-row="contra">
+                <td><strong>Contracultura</strong><br><span class="dossier-meta">Anos 1960 / Houaiss</span></td>
+                <td>Movimentos juvenis e subculturas contestadoras.</td>
+                <td>Questionamento e transgressão direta ao <em>establishment</em>.</td>
+                <td><em>Beat Generation</em>, Maio de 68, Primavera de Praga, hippies; risco de absorção pelo mercado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 04: INDÚSTRIA CULTURAL, MASSIFICAÇÃO E RESISTÊNCIA -->
+    <section class="study-section" id="mod-4" aria-labelledby="title-mod-4">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">04</span>
+          <span class="dossier-pill">ESCOLA DE FRANKFURT &amp; RESISTÊNCIA</span>
+          <span class="dossier-meta">ADORNO · HORKHEIMER · MORIN · WEIL · OSWALD</span>
+        </div>
+        <button type="button" class="btn btn-secondary" data-review-btn="mod-4" onclick="toggleModuleReviewed('mod-4')">Marcar como revisado</button>
+      </div>
+
+      <h2 class="section-title" id="title-mod-4">Indústria cultural não nasce do povo: reificação, alienação e as respostas da resistência</h2>
+
+      <div class="split-layout">
+        <div>
+          <p>
+            Em 1947, os filósofos da Escola de Frankfurt <strong>Theodor Adorno</strong> e <strong>Max Horkheimer</strong> cunharam o termo <strong>indústria cultural</strong> no ensaio <em>“A indústria cultural: o Iluminismo como mistificação das massas”</em>. Eles rejeitaram a expressão “cultura de massa” para evitar a falsa impressão de que essa cultura brota espontaneamente do povo. Ao contrário: ela é fabricada de cima para baixo, pelas elites detentoras dos meios de comunicação, transformando manifestações culturais em mercadorias em série.
+          </p>
+          <p>
+            Dois conceitos marxistas explicam esse processo: a <strong>reificação</strong> (“coisificação” das relações sociais, em que tudo passa a valer como mercadoria negociável com valor de troca) e a <strong>alienação</strong> (quando as pessoas são separadas dos benefícios de seu próprio trabalho sem perceber e consomem passivamente padrões impostos). Para Adorno e Horkheimer, a indústria dos divertimentos promete uma “felicidade barata” que continuamente frustra o consumidor e mantém intactas as desigualdades.
+          </p>
+          <p>
+            Já o sociólogo francês <strong>Edgar Morin</strong> destacou que a criação industrial divide o trabalho (como no cinema, na TV e no <em>rewriting</em> jornalístico), ressuscitando um coletivismo anônimo parecido ao das catedrais medievais ou dos desenhistas de histórias em quadrinhos. Para Morin, opera ali uma <strong>dialética padronização–individuação</strong>: a indústria apela à originalidade de cada obra, mas acaba amortecendo essa individualidade em fórmulas médias vendáveis. Na mesma linha, <strong>Teixeira Coelho</strong> (1993) contrapõe a cultura pop comercial à cultura popular autêntica, marcada pelo valor de uso.
+          </p>
+        </div>
+
+        <aside class="aside-box">
+          <span class="aside-label">Atenção à Pegadinha de Prova</span>
+          <h3 class="subhead" style="margin-bottom: var(--space-sm);">Absorção da Contracultura</h3>
+          <p style="font-size: 0.9375rem;">
+            A juventude dos anos 1960 protagonizou movimentos de transgressão — como a <em>Beat Generation</em> (EUA), o Maio de 1968 (França), a Primavera de Praga e o movimento hippie — mudando roupas, hábitos sexuais, música e gírias.
+          </p>
+          <p style="font-size: 0.9375rem;">
+            Porém, quando não consegue conter a contestação, a cultura dominante frequentemente a <strong>absorve e ressignifica</strong>: estilos punk e hippie passam a ser vendidos em lojas de grife, o rap ganha casas noturnas da elite e o grafite entra nos museus.
+          </p>
+        </aside>
+      </div>
+
+      <!-- Interactive Resistance Explorer -->
+      <div class="figure-card">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+          <h3 class="subhead">Três Caminhos de Resistência Cultural</h3>
+          <span class="dossier-meta">EXPLORE CADA ESTRATÉGIA E SEUS AUTORES</span>
+        </div>
+
+        <div class="segment-group" role="group" aria-label="Formas de resistência cultural">
+          <button type="button" class="segment-btn is-active" data-resist="enraizamento" onclick="selectResistance('enraizamento')">Enraizamento (Weil &amp; Bosi)</button>
+          <button type="button" class="segment-btn" data-resist="contracultura" onclick="selectResistance('contracultura')">Contracultura (Anos 1960)</button>
+          <button type="button" class="segment-btn" data-resist="antropofagia" onclick="selectResistance('antropofagia')">Antropofagia &amp; Tropicalismo (1928 / 1967)</button>
+        </div>
+
+        <div id="resistance-panel" class="aside-box" aria-live="polite">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 05: DIVERSIDADE, ACULTURAÇÃO E MEMÓRIA COLETIVA -->
+    <section class="study-section" id="mod-5" aria-labelledby="title-mod-5">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">05</span>
+          <span class="dossier-pill">IDENTIDADE &amp; PATRIMÔNIO</span>
+          <span class="dossier-meta">ACULTURAÇÃO · UNESCO · IPHAN · ART. 216 CF/88</span>
+        </div>
+        <button type="button" class="btn btn-secondary" data-review-btn="mod-5" onclick="toggleModuleReviewed('mod-5')">Marcar como revisado</button>
+      </div>
+
+      <h2 class="section-title" id="title-mod-5">Entre a padronização global e a preservação da memória: patrimônio material e imaterial</h2>
+
+      <div class="split-layout">
+        <div>
+          <p>
+            A cultura contemporânea vive um paradoxo: de um lado, a globalização e a difusão de modelos como o <em>American way of life</em> buscam padronizar hábitos para expandir mercados consumidores; de outro, grupos ameaçados reforçam sua alteridade para defender sua identidade. Quando contatos externos transformam profundamente um povo, ocorre a <strong>aculturação</strong> — seja por fusão e troca (como entre a Grécia antiga e o Império Romano), seja por imposição violenta (como dos colonizadores europeus sobre povos nativos das Américas). Já na <strong>apropriação cultural</strong>, há uma relação de domínio na qual a cultura dominante silencia a dominada e se apropria de seus traços, muitas vezes com fins comerciais.
+          </p>
+          <p>
+            Para proteger a diversidade, a <strong>Convenção da UNESCO de 2005</strong> reafirmou a diversidade cultural como patrimônio comum da humanidade, nutrido pela livre circulação de ideias. No plano histórico-social, desde o processo de <strong>hominização</strong> — quando a divisão sexual e depois social do trabalho permitiu estabilidade alimentar, avanços técnicos (pedra polida, fogo, ferro, cerâmica, agricultura) e gerou diferenciação étnica, domínios territoriais e propriedade privada —, a transmissão dos saberes dependeu da memória.
+          </p>
+          <p>
+            Como mostra <strong>Ulpiano Toledo Bezerra de Meneses</strong> (2007), a memória começa individual, mas torna-se <strong>memória coletiva por meio da linguagem</strong>, socializando experiências. <strong>Ecléa Bosi</strong> (1994) acrescenta que lembrar depende dos grupos de convívio e referência (família, escola, classe, Igreja, profissão). Como museus costumam privilegiar a memória oficial das classes dominantes, instituições como a <strong>UNESCO</strong> e o <strong>IPHAN</strong> atuam, nas palavras de <strong>Maria Lúcia Montes</strong> (2007), para resgatar a “outra memória” — a dos grupos subalternos, protegida no Brasil pelo <strong>Artigo 216 da Constituição Federal de 1988</strong> em bens materiais e imateriais (línguas, danças, comidas, festas e modos de criar, fazer e viver).
+          </p>
+        </div>
+
+        <aside class="aside-box">
+          <span class="aside-label">Constituição Federal de 1988 · Art. 216</span>
+          <h3 class="subhead" style="margin-bottom: var(--space-sm);">Os 5 incisos do patrimônio cultural brasileiro</h3>
+          <ol style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: var(--space-xs);">
+            <li>Formas de expressão;</li>
+            <li>Modos de criar, fazer e viver;</li>
+            <li>Criações científicas, artísticas e tecnológicas;</li>
+            <li>Obras, objetos, documentos e edificações artístico-culturais;</li>
+            <li>Conjuntos urbanos e sítios de valor histórico, paisagístico, artístico, arqueológico, paleontológico, ecológico e científico.</li>
+          </ol>
+        </aside>
+      </div>
+
+      <!-- Interactive Concept Lab -->
+      <div class="figure-card">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+          <div>
+            <h3 class="subhead">Laboratório de Casos: Identifique o Conceito</h3>
+            <p style="font-size: 0.9rem; color: var(--on-surface-variant); margin: 0;">Associe situações concretas das fontes ao conceito sociológico exato.</p>
+          </div>
+          <span class="dossier-meta" id="lab-counter">CASO 1 DE 6</span>
+        </div>
+
+        <div id="lab-container" class="aside-box">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 06: SOCIEDADE MIDIÁTICA E TEORIA DA HEGEMONIA DE GRAMSCI -->
+    <section class="study-section" id="mod-6" aria-labelledby="title-mod-6">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">06</span>
+          <span class="dossier-pill">TEORIA POLÍTICA &amp; IDEOLOGIA</span>
+          <span class="dossier-meta">ANTONIO GRAMSCI · INTELECTUAIS ORGÂNICOS · HEGEMONIA</span>
+        </div>
+        <button type="button" class="btn btn-secondary" data-review-btn="mod-6" onclick="toggleModuleReviewed('mod-6')">Marcar como revisado</button>
+      </div>
+
+      <h2 class="section-title" id="title-mod-6">Como uma classe conquista consentimento: a teoria da hegemonia em Antonio Gramsci</h2>
+
+      <p>
+        Ao contrário da acusação de que o marxismo deixaria a cultura em segundo plano diante da economia, pensadores como Lênin, Lukács e sobretudo <strong>Antonio Gramsci</strong> (1891–1937) demonstraram o peso decisivo da <strong>superestrutura</strong> (política, direito e cultura) sobre a <strong>infraestrutura econômica</strong>. Enquanto a ideia de <em>classe dominante</em> remete à coerção e à exploração econômica, uma <strong>classe hegemônica</strong> exerce liderança moral, intelectual e cultural, conquistando o <strong>consentimento social</strong> da maioria.
+      </p>
+
+      <!-- Interactive Gramsci Diagram -->
+      <div class="figure-card">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-sm); margin-bottom: var(--space-md);">
+          <h3 class="subhead">Esquema Interativo da Hegemonia (Clique nos elementos do sistema)</h3>
+          <span class="dossier-meta">CONEXÃO INFRAESTRUTURA ↔ SUPERESTRUTURA</span>
+        </div>
+
+        <div class="diagram-grid">
+          <div class="diagram-nodes" role="group" aria-label="Componentes da teoria da hegemonia de Gramsci">
+            <button type="button" class="node-btn is-active" data-gramsci="infra" onclick="selectGramsciNode('infra')">
+              <div>
+                <div class="node-code">Base 01 · Economia</div>
+                <div class="node-title">Infraestrutura e Relações de Produção</div>
+              </div>
+              <span class="dossier-meta">VER</span>
+            </button>
+            <button type="button" class="node-btn" data-gramsci="hegemonia" onclick="selectGramsciNode('hegemonia')">
+              <div>
+                <div class="node-code">Plano 02 · Direção Cultural</div>
+                <div class="node-title">Classe Dominante × Classe Hegemônica</div>
+              </div>
+              <span class="dossier-meta">VER</span>
+            </button>
+            <button type="button" class="node-btn" data-gramsci="intelectuais" onclick="selectGramsciNode('intelectuais')">
+              <div>
+                <div class="node-code">Elo 03 · Agentes</div>
+                <div class="node-title">Intelectuais Tradicionais × Intelectuais Orgânicos</div>
+              </div>
+              <span class="dossier-meta">VER</span>
+            </button>
+            <button type="button" class="node-btn" data-gramsci="sociedade" onclick="selectGramsciNode('sociedade')">
+              <div>
+                <div class="node-code">Rede 04 · Difusão</div>
+                <div class="node-title">Instituições da Sociedade Civil &amp; “Príncipe Moderno”</div>
+              </div>
+              <span class="dossier-meta">VER</span>
+            </button>
+            <button type="button" class="node-btn" data-gramsci="brasil" onclick="selectGramsciNode('brasil')">
+              <div>
+                <div class="node-code">Caso 05 · História do Brasil</div>
+                <div class="node-title">Primeira República: Política do Café com Leite (1889–1930)</div>
+              </div>
+              <span class="dossier-meta">VER</span>
+            </button>
+          </div>
+
+          <div id="gramsci-detail-panel" class="aside-box" aria-live="polite" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Searchable Glossary & Thinkers Directory -->
+      <div class="figure-card">
+        <div style="margin-bottom: var(--space-md);">
+          <h3 class="subhead">Mapa Rápido de Autores e Conceitos-Chave</h3>
+          <p style="font-size: 0.9rem; color: var(--on-surface-variant); margin: 0;">Filtre por eixo temático ou busque pelo nome do pensador ou conceito antes da prova.</p>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="field-group">
+            <label class="field-label" for="glossary-search">Buscar conceito ou autor</label>
+            <input type="text" id="glossary-search" class="text-input" placeholder="Ex.: Bourdieu, alteridade, reificação, Art. 216…" oninput="filterGlossary()">
+          </div>
+          <div class="field-group" style="max-width: 260px;">
+            <label class="field-label" for="glossary-theme">Filtrar por eixo</label>
+            <select id="glossary-theme" class="select-input" onchange="filterGlossary()">
+              <option value="all">Todos os eixos</option>
+              <option value="antropologia">Cultura &amp; Antropologia</option>
+              <option value="poder">Poder, Saber &amp; Hegemonia</option>
+              <option value="midia">Mídia &amp; Indústria Cultural</option>
+              <option value="memoria">Diversidade, Resistência &amp; Memória</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card-grid" id="glossary-grid">
+          <!-- Populated dynamically -->
+        </div>
+        <div id="glossary-empty" class="aside-box" style="display: none;">
+          <p><strong>Nenhum termo encontrado para esse filtro.</strong></p>
+          <button type="button" class="btn btn-secondary" onclick="clearGlossaryFilters()">Limpar filtros de busca</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: SIMULADO COMENTADO -->
+    <section class="study-section" id="simulado" aria-labelledby="title-simulado">
+      <div class="dossier-bar">
+        <div class="dossier-bar-left">
+          <span class="index-num">07</span>
+          <span class="dossier-pill">AVALIAÇÃO PRÁTICA</span>
+          <span class="dossier-meta">SIMULADO COMENTADO · 10 QUESTÕES</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+          <button type="button" class="segment-btn is-active" id="quiz-filter-all" onclick="setQuizFilter('all')">Todas (10)</button>
+          <button type="button" class="segment-btn" id="quiz-filter-pending" onclick="setQuizFilter('pending')">Erradas ou Pendentes</button>
+          <button type="button" class="btn btn-secondary" id="reset-quiz-btn" onclick="resetQuiz(this)">Reiniciar Simulado</button>
+        </div>
+      </div>
+
+      <h2 class="section-title" id="title-simulado">Teste seus conhecimentos antes da prova</h2>
+      <p>
+        Responda às questões elaboradas diretamente a partir dos textos didáticos estudados. Ao escolher uma alternativa, você recebe a correção imediata com a fundamentação teórica de cada autor.
+      </p>
+
+      <div id="quiz-list" style="display: flex; flex-direction: column; gap: var(--space-lg);">
+        <!-- Populated dynamically -->
+      </div>
+    </section>
+
+    <!-- FOOTER / SOURCES -->
+    <footer class="dossier-footer">
+      <div class="dossier-bar" style="margin-bottom: var(--space-sm);">
+        <span class="dossier-meta">FONTES UTILIZADAS NESTE DOSSIÊ</span>
+        <span class="dossier-meta">COLÉGIO DIVINA PROVIDÊNCIA · 1º ANO EM</span>
+      </div>
+      <p style="max-width: none; margin-bottom: var(--space-xs);">
+        Conteúdo integralmente fundamentado nos textos-base da disciplina de Sociologia: <em>Cultura e conhecimento</em>, <em>Cultura e poder</em>, <em>Cultura popular e cultura erudita</em>, <em>Indústria cultural</em>, <em>Padronização e diversidade cultural</em>, <em>Preservação e memória</em> e <em>Sociedade midiática</em>.
+      </p>
+      <p style="max-width: none;">
+        Referências teóricas e normativas citadas: Waldenyr Caldas (2008), Denys Cuche (2002), Marilena Chaui (2006), Karl Mannheim (2008), Pierre Bourdieu, Antonio Augusto Arantes (2007), Marshall McLuhan, Theodor Adorno e Max Horkheimer (1947; 2002), Teixeira Coelho (1993), Edgar Morin (2006), Simone Weil, Ecléa Bosi (1994; 2006), Oswald de Andrade (1928), Ulpiano Toledo Bezerra de Meneses (2007), Maria Lúcia Montes (2007), Delson Ferreira (2007), Antonio Gramsci, Convenção da UNESCO sobre a Diversidade das Expressões Culturais (2005) e Constituição Federal do Brasil (1988, Art. 216).
+      </p>
+    </footer>
+
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    const MODULE_IDS = [`mod-1`, `mod-2`, `mod-3`, `mod-4`, `mod-5`, `mod-6`];
+
+    const ANTHRO_PHASES = {
+      evolucionismo: {
+        badge: `Século XIX · Expansão Colonizadora`,
+        title: `Evolucionismo Cultural e Eurocentrismo`,
+        text: `Os primeiros antropólogos surgiram no contexto da expansão colonizadora europeia e foram influenciados por uma visão evolucionista linear. Confundindo “cultura” com “civilização”, classificavam os povos nativos da África, América e Ásia como “simples” ou “primitivos” que deveriam alcançar o modelo europeu (particularmente o francês, citado por Denys Cuche), justificando a dominação pela suposta superioridade do homem branco e pela catequese.`,
+        tags: [`Eurocentrismo`, `Hierarquização Cultural`, `Denys Cuche`]
+      },
+      determinismo: {
+        badge: `Fim do Séc. XIX – Início do Séc. XX`,
+        title: `Determinismo Pseudocientífico`,
+        text: `Corrente pseudocientífica segundo a qual o comportamento humano seria condicionado exclusivamente por três fatores: raça, meio geográfico e momento histórico. A individualidade e a criatividade cultural eram dissolvidas, legitimando preconceitos graves — como a ideia de “raças puras” ou o mito de que povos de regiões tropicais seriam preguiçosos por causa do clima — para naturalizar a inferioridade de grupos dominados.`,
+        tags: [`Raça, Meio e Momento`, `Pseudociência`, `Preconceito`]
+      },
+      diversidade: {
+        badge: `Século XX – Contemporaneidade`,
+        title: `Combate ao Etnocentrismo e Unidade na Diversidade`,
+        text: `A Antropologia contemporânea rejeita tomar a própria cultura como régua universal e afirma que não existem culturas superiores ou inferiores — apenas diferentes. Só existe uma raça: a raça humana. A “unidade na diversidade” significa que o traço comum a todos os povos é justamente a busca pela própria identidade cultural por meio da diferença. Mesmo elementos quase universais, como a religiosidade, concretizam-se de formas profundamente distintas em cada sociedade.`,
+        tags: [`Antropologia Contemporânea`, `Relativismo Cultural`, `Uma Só Raça Humana`]
+      }
+    };
+
+    const RESISTANCE_DATA = {
+      enraizamento: {
+        badge: `Simone Weil & Ecléa Bosi`,
+        title: `Enraizamento: preservar sem se fechar na xenofobia`,
+        text: `Para Simone Weil, o enraizamento é a necessidade mais importante e desconhecida da alma humana: participar de forma real e ativa de uma coletividade que mantém vivos os tesouros do passado e pressentimentos do futuro. Ecléa Bosi (2006) reforça que o enraizamento não significa xenofobia nem isolamento cultural, mas proteção contra a destruição brutal das tradições — causada tanto por conquistas coloniais e militares quanto pela dominação econômica interna, que torna os nativos “estrangeiros em sua própria terra”.`,
+        examples: `Exemplos: comunidades tradicionais que mantêm línguas, festas e saberes frente à padronização midiática; atuação de órgãos e coletivos locais pela memória.`
+      },
+      contracultura: {
+        badge: `Anos 1960 · Transgressão Juvenil`,
+        title: `Contracultura: negação dos valores institucionalizados`,
+        text: `Nascida nos anos 1960 como reação à cultura de massa, à padronização e ao consumismo capitalista, a contracultura é definida pelo Dicionário Houaiss como uma “subcultura que rejeita e questiona valores e práticas da cultura dominante da qual faz parte”. Encontrou força sobretudo entre os jovens, alterando vestimentas, hábitos sexuais, música e gírias. Contudo, a cultura dominante frequentemente coopta essas expressões, transformando contestação em mercadoria.`,
+        examples: `Exemplos: Beat Generation (EUA), Maio de 1968 (França), Primavera de Praga (Tchecoslováquia) e movimento hippie. Cooptados depois: moda punk/hippie em grifes, rap em casas noturnas da elite e grafite em museus.`
+      },
+      antropofagia: {
+        badge: `Oswald de Andrade (1928) & Tropicalismo (1967)`,
+        title: `Antropofagia Cultural: devorar o estrangeiro criticamente`,
+        text: `No Manifesto Antropófago (1928) — célebre pela frase “Tupi or not tupi, that is the question” —, Oswald de Andrade propôs que a identidade brasileira não deve nem rejeitar com xenofobia o que vem de fora nem imitá-lo com submissão passiva. A saída é devorar e digerir criticamente as influências estrangeiras, fundindo-as ao repertório nacional sem perder identidade.`,
+        examples: `Exemplo decisivo: o Tropicalismo (1967), criado por Caetano Veloso, Gilberto Gil e Torquato Neto, que fundiu tradições brasileiras como o samba às inovações da música pop internacional como o rock inglês.`
+      }
+    };
+
+    const GRAMSCI_NODES = {
+      infra: {
+        kicker: `Base Econômica`,
+        title: `Infraestrutura e Relações de Produção`,
+        body: `Na tradição marxista, a infraestrutura corresponde às relações econômicas e materiais de produção que definem as classes sociais fundamentais do capitalismo: a burguesia (detentora dos meios de produção) e o proletariado assalariado (classes subalternas). A economia rege a evolução social em última instância, mas não opera sozinha.`,
+        quote: `A superestrutura política, jurídica e cultural possui autonomia relativa e pode direcionar os rumos históricos de uma nação.`
+      },
+      hegemonia: {
+        kicker: `Direção Sociopolítica e Cultural`,
+        title: `Classe Dominante vs. Classe Hegemônica`,
+        body: `Enquanto o conceito de classe dominante enfatiza a coerção e a exploração econômica do trabalho, a classe hegemônica atua no plano sociopolítico e cultural, obtendo um mínimo de consentimento social. Para manter a hegemonia, a fração dirigente faz com que seus próprios valores, metas e visão de mundo pareçam de interesse universal de toda a população.`,
+        quote: `Mesmo outros setores da classe dominante podem seguir “a reboque” da fração hegemônica — sem deixar de ser dominantes.`
+      },
+      intelectuais: {
+        kicker: `Elos entre Infraestrutura e Superestrutura`,
+        title: `Intelectuais Tradicionais e Intelectuais Orgânicos`,
+        body: `Diferentemente dos intelectuais tradicionais (filósofos, acadêmicos e professores no senso comum), Gramsci amplia o conceito com os intelectuais orgânicos: todos os produtores e organizadores de ideias — sacerdotes, cientistas, técnicos, oficiais militares, líderes sindicais, administradores públicos, dirigentes de empresas e de partidos.`,
+        quote: `Recrutados normalmente nas camadas médias (pequena burguesia), atuam como “suco gástrico” que dissolve e torna homogênea uma ideologia, assegurando consenso entre massas e Estado.`
+      },
+      sociedade: {
+        kicker: `Aparelhos Privados de Hegemonia`,
+        title: `Sociedade Civil e o “Príncipe Moderno”`,
+        body: `A hegemonia precisa ser transmitida permanentemente por escolas, igrejas, famílias, empresas, sindicatos, imprensa, mídias e expressões artísticas. Invocando Maquiavel, Gramsci enxerga ainda o partido político como o “príncipe moderno”, capaz de articular e difundir uma doutrina orgânica. Essa engrenagem pode servir tanto à classe dominante quanto a um projeto contra-hegemônico das classes trabalhadoras.`,
+        quote: `Na atualidade, esse debate reaparece na imposição cultural ocidental cristã sobre povos originários e em restrições ideológicas de base religiosa em países como Afeganistão ou Irã.`
+      },
+      brasil: {
+        kicker: `Exemplo Histórico Brasileiro`,
+        title: `Primeira República: Política do Café com Leite (1889–1930)`,
+        body: `Durante a República Velha, as oligarquias agrárias exportadoras de café configuraram uma clara classe hegemônica. Não apenas controlavam os governos federais sucessivos, como também convenciam industriais, comerciantes, classes médias e trabalhadores de que a defesa dos interesses cafeeiros equivalia ao bem-estar de todo o Brasil.`,
+        quote: `Um projeto particular de um setor agrário transformado em “interesse nacional” por meio do consentimento.`
+      }
+    };
+
+    const LAB_CASES = [
+      {
+        prompt: `Roupas do movimento hippie passam a ser vendidas em lojas de grife, o rap das periferias toca em casas noturnas da elite e o grafite é exibido em museus tradicionais.`,
+        options: [`Absorção / Cooptação da Contracultura`, `Determinismo Geográfico`, `Capital Cultural de Bourdieu`, `Hominização`],
+        answer: 0,
+        explanation: `Correto: quando a cultura dominante não consegue conter o espírito contestador juvenil, ela se apropria desses símbolos, ressignificando a contracultura como mercadoria dentro da indústria cultural.`
+      },
+      {
+        prompt: `Em 1967, Caetano Veloso, Gilberto Gil e Torquato Neto fundem tradições musicais brasileiras, como o samba, com o rock inglês e novidades da música pop internacional.`,
+        options: [`Eurocentrismo`, `Antropofagia / Tropicalismo`, `Ideologia da Competência`, `Apropriação Comercial Silenciadora`],
+        answer: 1,
+        explanation: `Correto: inspirado no Manifesto Antropófago (1928) de Oswald de Andrade, o Tropicalismo devorou e digeriu influências estrangeiras sem xenofobia nem submissão passiva.`
+      },
+      {
+        prompt: `Na Primeira República (1889–1930), grandes cafeicultores fazem com que comerciantes, industriais e trabalhadores aceitem a defesa do café como interesse de todo o país.`,
+        options: [`Hegemonia de Classe (Gramsci)`, `Reificação (Adorno)`, `Patrimônio Imaterial (Art. 216)`, `Cultura Popular Autêntica`],
+        answer: 0,
+        explanation: `Correto: trata-se do exercício da hegemonia descrito por Antonio Gramsci, no qual uma fração dirigente conquista consentimento social em torno de seu projeto como se fosse universal.`
+      },
+      {
+        prompt: `No século XIX e início do XX, defendia-se que habitantes de regiões tropicais seriam “naturalmente preguiçosos” por causa do clima e da raça.`,
+        options: [`Relativismo Cultural`, `Determinismo Pseudocientífico`, `Enraizamento Cultural`, `Dialética Padronização-Individuação`],
+        answer: 1,
+        explanation: `Correto: essa tese pseudocientífica reduzia o comportamento humano à raça, ao meio geográfico e ao momento histórico, servindo para justificar preconceitos e suposta superioridade de grupos dominantes.`
+      },
+      {
+        prompt: `Um grupo dominante silencia uma cultura marginalizada e passa a comercializar suas expressões tradicionais sem reconhecer nem beneficiar os criadores originais.`,
+        options: [`Apropriação Cultural`, `Unidade na Diversidade`, `Cultura Erudita`, `Aldeia Global`],
+        answer: 0,
+        explanation: `Correto: na apropriação cultural existe uma relação de domínio em que uma cultura silencia outra e se apropria de seus traços frequentemente com finalidade comercial.`
+      },
+      {
+        prompt: `O IPHAN registra línguas, danças, culinária e modos de fazer de comunidades tradicionais para resgatar memórias de grupos historicamente soterrados pelos museus oficiais.`,
+        options: [`Patrimônio Cultural Imaterial (Art. 216 CF/88)`, `Massificação Midiática`, `Ideologia da Competência`, `Intelectual Tradicional`],
+        answer: 0,
+        explanation: `Correto: como aponta Maria Lúcia Montes e garante o Art. 216 da Constituição Federal de 1988, a preservação do patrimônio imaterial assegura a memória dos grupos subalternos além da história oficial.`
+      }
+    ];
+
+    const GLOSSARY_ITEMS = [
+      { term: `Alteridade`, author: `Antropologia Contemporânea`, theme: `antropologia`, def: `Do latim alter (“outro”). A identidade cultural de um grupo só se reconhece na percepção da diferença diante de outros grupos.` },
+      { term: `Unidade na Diversidade`, author: `Antropologia do Séc. XX`, theme: `antropologia`, def: `Perspectiva que rejeita hierarquias entre culturas: o que iguala os povos é justamente serem diferentes e afirmarem suas identidades.` },
+      { term: `Determinismo`, author: `Crítica Antropológica`, theme: `antropologia`, def: `Teoria pseudocientífica (séc. XIX–XX) que atribuía o comportamento humano exclusivamente a raça, meio geográfico e momento histórico.` },
+      { term: `Ideologia da Competência`, author: `Marilena Chaui (2006)`, theme: `poder`, def: `Mecanismo ideológico que divide a sociedade entre os que detêm o saber institucionalizado (“mandam”) e os que não o possuem (“obedecem”).` },
+      { term: `Capital Cultural`, author: `Pierre Bourdieu`, theme: `poder`, def: `Bagagem cultural (sobretudo ligada à educação formal e diplomas) acumulada por grupos privilegiados que reproduz desigualdades sociais.` },
+      { term: `Coerções Culturais`, author: `Cultura e Poder`, theme: `poder`, def: `Pressões sociais sobre o gosto e os valores individuais, gerando incômodo por apreciar algo rejeitado pelo grupo ou obrigação de seguir padrões.` },
+      { term: `Hegemonia & Intelectual Orgânico`, author: `Antonio Gramsci`, theme: `poder`, def: `Liderança cultural baseada no consentimento social difundido por escolas, igrejas, mídia e partidos, articulada por produtores de ideias (intelectuais orgânicos).` },
+      { term: `Indústria Cultural`, author: `Adorno & Horkheimer (1947)`, theme: `midia`, def: `Produção em série de bens culturais pelas elites visando lucro, reificação (“coisificação”) e alienação — distinta de uma cultura criada espontaneamente pelo povo.` },
+      { term: `Dialética Padronização-Individuação`, author: `Edgar Morin`, theme: `midia`, def: `Tensão na produção industrial (cinema, TV, imprensa) que busca apelar à originalidade individual da obra, mas tende a padronizá-la em fórmulas médias.` },
+      { term: `Aldeia Global & Mídia`, author: `Marshall McLuhan / Delson Ferreira`, theme: `midia`, def: `Interconexão planetária pelas redes de comunicação que encurta distâncias, atuando nas esferas política/cultural e mercadológica sem eliminar desigualdades.` },
+      { term: `Enraizamento`, author: `Simone Weil & Ecléa Bosi`, theme: `memoria`, def: `Participação viva na memória e tradições coletivas; protege contra o desenraizamento colonial, militar ou econômico sem cair em xenofobia.` },
+      { term: `Antropofagia`, author: `Oswald de Andrade (1928)`, theme: `memoria`, def: `Proposta de “devorar” e digerir criticamente influências estrangeiras, superando tanto a xenofobia quanto a submissão cultural (base do Tropicalismo).` },
+      { term: `Aculturação vs. Apropriação`, author: `Diversidade Cultural`, theme: `memoria`, def: `Aculturação é a mudança cultural por fusão ou imposição externa; apropriação ocorre quando uma cultura dominante silencia outra e lucra com seus traços.` },
+      { term: `Memória Coletiva & Patrimônio`, author: `Ulpiano Meneses / Maria Lúcia Montes / Art. 216`, theme: `memoria`, def: `A linguagem transforma memória individual em coletiva. UNESCO e IPHAN preservam bens materiais e imateriais, resgatando memórias subalternas.` }
+    ];
+
+    const QUIZ_QUESTIONS = [
+      {
+        id: `q1`,
+        topic: `Cultura e Antropologia`,
+        stem: `No senso comum, diz-se que “culta” é a pessoa que domina artes, idiomas ou ciência. Na perspectiva da Antropologia contemporânea (Waldenyr Caldas e Denys Cuche), o conceito de cultura define-se corretamente como:`,
+        options: [
+          `o conjunto de diplomas universitários adquiridos pelas elites ao longo da escolarização formal.`,
+          `o estágio superior de civilização atingido pelas sociedades europeias no século XIX.`,
+          `o modo de vida, padrões de comportamento, crenças e escolhas coletivas construídas em relação com a alteridade.`,
+          `o comportamento herdado biologicamente por cada etnia de acordo com o clima e o meio geográfico.`
+        ],
+        answer: 2,
+        rationale: `Na Antropologia, cultura abrange o modo de vida, valores e soluções criadas coletivamente pelos grupos humanos (que compartilham a mesma carga genética), definindo-se sempre em relação ao “outro” (alteridade). As alternativas B e D reproduzem o evolucionismo eurocêntrico e o determinismo.`
+      },
+      {
+        id: `q2`,
+        topic: `Cultura e Conhecimento`,
+        stem: `Sobre a relação entre cultura e diferentes formas de conhecimento (saberes), é correto afirmar que:`,
+        options: [
+          `o conhecimento é estático e imutável, devendo preservar os mesmos padrões em todas as épocas.`,
+          `todas as culturas valorizam exatamente os mesmos saberes acadêmicos acima dos saberes práticos.`,
+          `cada sociedade atribui prestígio distinto a certos saberes — como os religiosos/guerreiros nas civilizações pré-colombianas ou o saber universitário no Ocidente atual —, embora saberes práticos sejam igualmente essenciais.`,
+          `somente as pessoas com ensino superior produzem cultura e conhecimento válidos para a vida social.`
+        ],
+        answer: 2,
+        rationale: `O conhecimento é dinâmico e coletivo. Como destaca o texto-base, cada povo valoriza mais certos saberes (por exemplo, o saber acadêmico hoje vs. saberes práticos como cozinhar, pilotar ou consertar computadores), sem que os saberes não acadêmicos deixem de ser vitais.`
+      },
+      {
+        id: `q3`,
+        topic: `Cultura e Poder · Marilena Chaui`,
+        stem: `A filósofa Marilena Chaui analisa a chamada “ideologia da competência”. Segundo essa concepção crítica, o discurso dominante busca:`,
+        options: [
+          `democratizar o acesso às belas-artes entre trabalhadores urbanos e rurais sem hierarquias.`,
+          `dividir a sociedade entre aqueles que supostamente “sabem e por isso mandam” e os que “não sabem e por isso obedecem”.`,
+          `eliminar a diferença entre cultura erudita e cultura popular através dos programas de folclore.`,
+          `provar que a ciência jamais falha e representa a verdade absoluta sobre a política.`
+        ],
+        answer: 1,
+        rationale: `Para Chaui (2006), a ideologia da competência legitima relações de dominação ao apresentar a cultura como algo produzido e possuído por poucos enquanto a maioria a recebe passivamente.`
+      },
+      {
+        id: `q4`,
+        topic: `Capital Cultural · Bourdieu`,
+        stem: `Ao tratar da cultura científica, da simbologia dos “doutores” e da escolaridade como distinção social, o conceito de “capital cultural”, formulado por Pierre Bourdieu, refere-se:`,
+        options: [
+          `ao patrimônio financeiro acumulado exclusivamente pelas emissoras de rádio e televisão.`,
+          `à bagagem cultural adquirida sobretudo pela educação formal, utilizada como instrumento de distinção e reprodução das desigualdades de classe.`,
+          `ao conjunto de lendas, danças e artesanatos preservados pelo folclore rural.`,
+          `à impossibilidade de qualquer conhecimento científico ser revisado ou contestado.`
+        ],
+        answer: 1,
+        rationale: `Bourdieu denomina capital cultural o acúmulo de referências e credenciais culturais (muitas vezes ligadas à educação formal) que funciona nas sociedades de classes como instrumento para impor e legitimar os valores das elites.`
+      },
+      {
+        id: `q5`,
+        topic: `Cultura Erudita, Popular e Mídia`,
+        stem: `Comparando a cultura erudita e a cultura popular a partir das análises de Waldenyr Caldas e Antonio Augusto Arantes, assinale a afirmação correta:`,
+        options: [
+          `a cultura erudita tende a ser conservadora e voltada à manutenção do status quo, enquanto a cultura popular circula fora das instituições acadêmicas e pode assumir papel de resistência contra a dominação de classe.`,
+          `a cultura popular depende exclusivamente da leitura de tratados filosóficos e do acesso a museus fechados.`,
+          `o termo “mídia” entrou no Brasil diretamente do latim clássico, sem qualquer relação com a influência cultural norte-americana.`,
+          `a “aldeia global” de Marshall McLuhan eliminou completamente as desigualdades sociais e a dominação econômica.`
+        ],
+        answer: 0,
+        rationale: `A cultura erudita (de *eruditus*) costuma exigir instrução formal e preservar o establishment; já a cultura popular ganha as ruas e, segundo Arantes, pode funcionar como resistência política. Quanto a “mídia”, veio pela pronúncia inglesa dos EUA (ao contrário de Portugal, “os médias”), e a aldeia global não superou as desigualdades.`
+      },
+      {
+        id: `q6`,
+        topic: `Escola de Frankfurt`,
+        stem: `Por que Theodor Adorno e Max Horkheimer substituíram a expressão “cultura de massa” pelo conceito de “indústria cultural”?`,
+        options: [
+          `Porque defendiam que o cinema e o rádio tornaram a vida humana mais livre, espontânea e igualitária.`,
+          `Para deixar claro que essa produção cultural não brota espontaneamente do povo, mas é fabricada industrialmente pelas classes dominantes como mercadoria reificada e alienante.`,
+          `Porque queriam elogiar o coletivismo anônimo das histórias em quadrinhos em oposição às artes clássicas.`,
+          `Para afirmar que os trabalhadores controlam integralmente os meios de comunicação de massa.`
+        ],
+        answer: 1,
+        rationale: `Adorno explicou que abandonaram “cultura de massa” para excluir a ilusão de uma arte popular espontânea. A indústria cultural vem de cima para baixo, reifica (coisifica) a criação humana em mercadoria e promove alienação e felicidade barata.`
+      },
+      {
+        id: `q7`,
+        topic: `Indústria Cultural · Edgar Morin`,
+        stem: `Na análise de Edgar Morin sobre a produção cultural industrializada (cinema, televisão e imprensa), a “dialética padronização–individuação” significa que:`,
+        options: [
+          `a divisão industrial do trabalho impede totalmente qualquer obra-prima individual no cinema.`,
+          `a indústria cultural apela à individualização e originalidade das obras, mas tende simultaneamente a padronizá-las em um termo médio comercial.`,
+          `os jornalistas deixaram de praticar o rewriting, preferindo textos inteiramente artesanais.`,
+          `a cultura pop rompe radicalmente com todos os valores institucionalizados pelos jovens.`
+        ],
+        answer: 1,
+        rationale: `Para Morin, a divisão do trabalho não impede obras-primas, mas cria uma tensão permanente: quanto mais a indústria cultural se desenvolve, mais apela à individuação e, ao mesmo tempo, tende a padronizar essa individuação.`
+      },
+      {
+        id: `q8`,
+        topic: `Resistência · Enraizamento e Antropofagia`,
+        stem: `Sobre as formas de resistência cultural estudadas — enraizamento (Simone Weil e Ecléa Bosi) e antropofagia (Oswald de Andrade) —, é correto afirmar que:`,
+        options: [
+          `ambas exigem xenofobia absoluta e o fechamento total das fronteiras contra qualquer influência externa.`,
+          `o enraizamento protege a memória coletiva contra o desenraizamento colonial ou econômico sem xenofobia, enquanto a antropofagia propõe digerir criticamente o estrangeiro sem submissão passiva.`,
+          `o Tropicalismo rejeitou a antropofagia de 1928 para imitar passivamente o rock inglês sem misturá-lo ao samba.`,
+          `a contracultura dos anos 1960 nunca sofreu qualquer tentativa de absorção comercial pelo mercado.`
+        ],
+        answer: 1,
+        rationale: `Ecléa Bosi ressalta que enraizamento não é xenofobia, mas defesa contra a supressão de tradições; Oswald de Andrade propôs devorar e digerir o estrangeiro (influenciando o Tropicalismo). Já a contracultura frequentemente acaba cooptada por grifes e mercados.`
+      },
+      {
+        id: `q9`,
+        topic: `Preservação e Memória`,
+        stem: `De acordo com Ulpiano de Meneses, Maria Lúcia Montes e o Artigo 216 da Constituição Federal de 1988, sobre memória coletiva e patrimônio cultural, assinale a opção correta:`,
+        options: [
+          `a memória permanece estritamente individual, pois a linguagem não consegue transmiti-la à comunidade.`,
+          `apenas prédios históricos e monumentos de pedra constituem patrimônio cultural protegido pela Constituição.`,
+          `a linguagem transforma a memória individual em coletiva, e órgãos como UNESCO e IPHAN buscam resgatar também a memória imaterial de grupos subalternos (línguas, danças, comidas e modos de viver).`,
+          `os museus tradicionais sempre priorizaram espontaneamente os saberes marginalizados, dispensando políticas públicas de patrimônio.`
+        ],
+        answer: 2,
+        rationale: `Ulpiano de Meneses explica que a linguagem socializa a memória individual. Maria Lúcia Montes destaca que órgãos como UNESCO e IPHAN resgatam a “outra memória” (subalterna), e o Art. 216 da CF/88 protege tanto bens materiais quanto imateriais.`
+      },
+      {
+        id: `q10`,
+        topic: `Teoria da Hegemonia · Gramsci`,
+        stem: `Na teoria da hegemonia de Antonio Gramsci, qual é o papel específico dos “intelectuais orgânicos” e das instituições da sociedade civil?`,
+        options: [
+          `Substituir completamente a infraestrutura econômica pela abolição imediata de escolas, igrejas e imprensa.`,
+          `Limitar o título de intelectual exclusivamente aos professores universitários e filósofos isolados da política.`,
+          `Articular o consenso ideológico entre Estado e massas por meio de escolas, igrejas, empresas, sindicatos e mídia, tornando homogênea a visão de mundo de uma classe dirigente.`,
+          `Impedir que qualquer partido político atue como organizador de ideias na sociedade moderna.`
+        ],
+        answer: 2,
+        rationale: `Gramsci amplia a noção de intelectual para todos os organizadores/produtores de ideias (sacerdotes, cientistas, técnicos, líderes sindicais, administradores, dirigentes) que atuam como elo entre infraestrutura e superestrutura, gerando consentimento social nas instituições da sociedade civil.`
+      }
+    ];
+
+    let appState = {
+      reviewedModules: [],
+      anthroPhase: `evolucionismo`,
+      resistanceTab: `enraizamento`,
+      matrixFilter: `all`,
+      gramsciNode: `infra`,
+      labIndex: 0,
+      labSolved: {},
+      quizAnswers: {},
+      quizFilter: `all`
+    };
+
+    function safeGetEl(id) {
+      return document.getElementById(id);
+    }
+
+    async function persistState() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === `function`) {
+          await window.notebookAppApi.setAppState(appState);
+        }
+      } catch (err) {
+        // Ignore persistence errors gracefully in standalone preview
+      }
+    }
+
+    function updateProgressUI() {
+      const reviewedCount = appState.reviewedModules.length;
+      const quizAnswered = Object.keys(appState.quizAnswers).length;
+      let quizCorrect = 0;
+      QUIZ_QUESTIONS.forEach(function(q) {
+        if (appState.quizAnswers[q.id] === q.answer) quizCorrect += 1;
+      });
+      const labDone = Object.keys(appState.labSolved).length;
+
+      const kpiModules = safeGetEl(`kpi-modules`);
+      const progModules = safeGetEl(`progress-modules`);
+      const kpiModulesNote = safeGetEl(`kpi-modules-note`);
+      if (kpiModules) kpiModules.textContent = `${reviewedCount} / ${MODULE_IDS.length}`;
+      if (progModules) progModules.style.width = `${Math.round((reviewedCount / MODULE_IDS.length) * 100)}%`;
+      if (kpiModulesNote) {
+        kpiModulesNote.textContent = reviewedCount === MODULE_IDS.length
+          ? `Todos os 6 módulos foram revisados.`
+          : `Faltam ${MODULE_IDS.length - reviewedCount} módulos para concluir.`;
+      }
+
+      const kpiQuiz = safeGetEl(`kpi-quiz`);
+      const progQuiz = safeGetEl(`progress-quiz`);
+      const kpiQuizNote = safeGetEl(`kpi-quiz-note`);
+      if (kpiQuiz) kpiQuiz.textContent = `${quizCorrect} / ${QUIZ_QUESTIONS.length}`;
+      if (progQuiz) progQuiz.style.width = `${Math.round((quizCorrect / QUIZ_QUESTIONS.length) * 100)}%`;
+      if (kpiQuizNote) {
+        if (quizAnswered === 0) {
+          kpiQuizNote.textContent = `Nenhuma questão respondida ainda.`;
+        } else {
+          const pct = Math.round((quizCorrect / quizAnswered) * 100);
+          kpiQuizNote.textContent = `${quizAnswered} respondidas (${pct}% de acerto).`;
+        }
+      }
+
+      const kpiLab = safeGetEl(`kpi-lab`);
+      const progLab = safeGetEl(`progress-lab`);
+      const kpiLabNote = safeGetEl(`kpi-lab-note`);
+      if (kpiLab) kpiLab.textContent = `${labDone} / ${LAB_CASES.length}`;
+      if (progLab) progLab.style.width = `${Math.round((labDone / LAB_CASES.length) * 100)}%`;
+      if (kpiLabNote) {
+        kpiLabNote.textContent = labDone === LAB_CASES.length
+          ? `Todos os casos práticos analisados.`
+          : `${LAB_CASES.length - labDone} casos restantes no laboratório.`;
+      }
+
+      MODULE_IDS.forEach(function(id) {
+        const isDone = appState.reviewedModules.indexOf(id) !== -1;
+        const btn = document.querySelector(`[data-review-btn="${id}"]`);
+        if (btn) {
+          btn.textContent = isDone ? `Revisado (desmarcar)` : `Marcar como revisado`;
+          btn.className = isDone ? `btn btn-reviewed` : `btn btn-secondary`;
+          btn.setAttribute(`aria-pressed`, isDone ? `true` : `false`);
+        }
+        const navLink = document.querySelector(`[data-nav-mod="${id}"]`);
+        if (navLink) {
+          if (isDone) navLink.classList.add(`is-done`);
+          else navLink.classList.remove(`is-done`);
+        }
+      });
+    }
+
+    function toggleModuleReviewed(modId) {
+      const idx = appState.reviewedModules.indexOf(modId);
+      if (idx === -1) {
+        appState.reviewedModules.push(modId);
+      } else {
+        appState.reviewedModules.splice(idx, 1);
+      }
+      updateProgressUI();
+      persistState();
+    }
+
+    function selectAnthroPhase(phaseKey) {
+      if (!ANTHRO_PHASES[phaseKey]) return;
+      appState.anthroPhase = phaseKey;
+      renderAnthroPhase();
+      persistState();
+    }
+
+    function renderAnthroPhase() {
+      const data = ANTHRO_PHASES[appState.anthroPhase] || ANTHRO_PHASES.evolucionismo;
+      document.querySelectorAll(`[data-phase]`).forEach(function(btn) {
+        const active = btn.getAttribute(`data-phase`) === appState.anthroPhase;
+        btn.classList.toggle(`is-active`, active);
+        btn.setAttribute(`aria-pressed`, active ? `true` : `false`);
+      });
+      const panel = safeGetEl(`anthro-phase-panel`);
+      if (!panel) return;
+      const tagsHtml = data.tags.map(function(t) {
+        return `<span class="tag">${t}</span>`;
+      }).join(` `);
+      panel.innerHTML = `
+        <span class="aside-label">${data.badge}</span>
+        <h4 class="subhead" style="margin-bottom: var(--space-xs);">${data.title}</h4>
+        <p style="font-size: 0.95rem;">${data.text}</p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-top: var(--space-sm);">${tagsHtml}</div>
+      `;
+    }
+
+    function highlightMatrixRow(key) {
+      appState.matrixFilter = key;
+      document.querySelectorAll(`[data-matrix]`).forEach(function(btn) {
+        const active = btn.getAttribute(`data-matrix`) === key;
+        btn.classList.toggle(`is-active`, active);
+        btn.setAttribute(`aria-pressed`, active ? `true` : `false`);
+      });
+      document.querySelectorAll(`#matrix-tbody tr`).forEach(function(row) {
+        const rKey = row.getAttribute(`data-row`);
+        if (key === `all`) {
+          row.classList.remove(`is-highlighted`);
+          row.style.opacity = `1`;
+        } else if (rKey === key) {
+          row.classList.add(`is-highlighted`);
+          row.style.opacity = `1`;
+        } else {
+          row.classList.remove(`is-highlighted`);
+          row.style.opacity = `0.55`;
+        }
+      });
+      persistState();
+    }
+
+    function selectResistance(key) {
+      if (!RESISTANCE_DATA[key]) return;
+      appState.resistanceTab = key;
+      renderResistance();
+      persistState();
+    }
+
+    function renderResistance() {
+      const data = RESISTANCE_DATA[appState.resistanceTab] || RESISTANCE_DATA.enraizamento;
+      document.querySelectorAll(`[data-resist]`).forEach(function(btn) {
+        const active = btn.getAttribute(`data-resist`) === appState.resistanceTab;
+        btn.classList.toggle(`is-active`, active);
+        btn.setAttribute(`aria-pressed`, active ? `true` : `false`);
+      });
+      const panel = safeGetEl(`resistance-panel`);
+      if (!panel) return;
+      panel.innerHTML = `
+        <span class="aside-label">${data.badge}</span>
+        <h4 class="subhead" style="margin-bottom: var(--space-xs);">${data.title}</h4>
+        <p style="font-size: 0.95rem;">${data.text}</p>
+        <p style="font-size: 0.9rem; color: var(--secondary); font-weight: 600; margin-top: var(--space-sm);">${data.examples}</p>
+      `;
+    }
+
+    function selectGramsciNode(key) {
+      if (!GRAMSCI_NODES[key]) return;
+      appState.gramsciNode = key;
+      renderGramsciNode();
+      persistState();
+    }
+
+    function renderGramsciNode() {
+      const data = GRAMSCI_NODES[appState.gramsciNode] || GRAMSCI_NODES.infra;
+      document.querySelectorAll(`[data-gramsci]`).forEach(function(btn) {
+        const active = btn.getAttribute(`data-gramsci`) === appState.gramsciNode;
+        btn.classList.toggle(`is-active`, active);
+        btn.setAttribute(`aria-pressed`, active ? `true` : `false`);
+      });
+      const panel = safeGetEl(`gramsci-detail-panel`);
+      if (!panel) return;
+      panel.innerHTML = `
+        <div>
+          <span class="aside-label">${data.kicker}</span>
+          <h4 class="subhead" style="margin-bottom: var(--space-sm);">${data.title}</h4>
+          <p style="font-size: 0.95rem;">${data.body}</p>
+        </div>
+        <div style="border-top: var(--card-border); padding-top: var(--space-sm); margin-top: var(--space-md);">
+          <span class="tag tag-slate" style="margin-bottom: var(--space-xs);">Síntese para a prova</span>
+          <p style="font-size: 0.9rem; font-weight: 600; color: var(--on-surface);">${data.quote}</p>
+        </div>
+      `;
+    }
+
+    function renderLabCase() {
+      const idx = Math.max(0, Math.min(appState.labIndex, LAB_CASES.length - 1));
+      appState.labIndex = idx;
+      const item = LAB_CASES[idx];
+      const counter = safeGetEl(`lab-counter`);
+      const box = safeGetEl(`lab-container`);
+      if (counter) counter.textContent = `CASO ${idx + 1} DE ${LAB_CASES.length}`;
+      if (!box) return;
+
+      const selected = appState.labSolved[idx];
+      const hasAnswered = typeof selected === `number`;
+
+      const optsHtml = item.options.map(function(opt, oIdx) {
+        let cls = `case-choice-btn`;
+        if (hasAnswered) {
+          if (oIdx === item.answer) cls += ` is-correct`;
+          else if (oIdx === selected) cls += ` is-wrong`;
+        }
+        return `<button type="button" class="${cls}" onclick="answerLabCase(${idx}, ${oIdx})">${opt}</button>`;
+      }).join(``);
+
+      let feedbackHtml = ``;
+      if (hasAnswered) {
+        const isCorrect = selected === item.answer;
+        feedbackHtml = `
+          <div class="feedback-box ${isCorrect ? `is-correct` : `is-wrong`}" style="margin-top: var(--space-md);">
+            <strong>${isCorrect ? `Diagnóstico exato.` : `Revise a categoria:`}</strong> ${item.explanation}
+          </div>
+        `;
+      }
+
+      box.innerHTML = `
+        <span class="aside-label">Situação-Problema ${idx + 1}</span>
+        <p style="font-weight: 600; font-size: 1rem; color: var(--on-surface);">${item.prompt}</p>
+        <div class="case-option-list">${optsHtml}</div>
+        ${feedbackHtml}
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-sm); margin-top: var(--space-md); padding-top: var(--space-sm); border-top: var(--card-border);">
+          <button type="button" class="btn btn-secondary" onclick="stepLabCase(-1)" ${idx === 0 ? `disabled` : ``}>Caso anterior</button>
+          <span class="dossier-meta">${Object.keys(appState.labSolved).length} DE ${LAB_CASES.length} RESOLVIDOS</span>
+          <button type="button" class="btn btn-primary" onclick="stepLabCase(1)" ${idx === LAB_CASES.length - 1 ? `disabled` : ``}>Próximo caso</button>
+        </div>
+      `;
+    }
+
+    function answerLabCase(caseIdx, optIdx) {
+      appState.labSolved[caseIdx] = optIdx;
+      renderLabCase();
+      updateProgressUI();
+      persistState();
+    }
+
+    function stepLabCase(delta) {
+      const next = appState.labIndex + delta;
+      if (next < 0 || next >= LAB_CASES.length) return;
+      appState.labIndex = next;
+      renderLabCase();
+      persistState();
+    }
+
+    function filterGlossary() {
+      const searchEl = safeGetEl(`glossary-search`);
+      const themeEl = safeGetEl(`glossary-theme`);
+      const grid = safeGetEl(`glossary-grid`);
+      const empty = safeGetEl(`glossary-empty`);
+      if (!grid || !empty) return;
+
+      const query = searchEl ? searchEl.value.trim().toLowerCase() : ``;
+      const theme = themeEl ? themeEl.value : `all`;
+
+      const filtered = GLOSSARY_ITEMS.filter(function(item) {
+        const matchTheme = theme === `all` || item.theme === theme;
+        const hay = `${item.term} ${item.author} ${item.def}`.toLowerCase();
+        const matchQuery = !query || hay.indexOf(query) !== -1;
+        return matchTheme && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = ``;
+        empty.style.display = `block`;
+        return;
+      }
+
+      empty.style.display = `none`;
+      grid.innerHTML = filtered.map(function(item) {
+        return `
+          <article class="figure-card" style="background: var(--background);">
+            <span class="tag tag-slate" style="margin-bottom: var(--space-xs);">${item.author}</span>
+            <h4 class="subhead" style="font-size: 1.08rem; margin-bottom: var(--space-xs);">${item.term}</h4>
+            <p style="font-size: 0.9rem;">${item.def}</p>
+          </article>
+        `;
+      }).join(``);
+    }
+
+    function clearGlossaryFilters() {
+      const searchEl = safeGetEl(`glossary-search`);
+      const themeEl = safeGetEl(`glossary-theme`);
+      if (searchEl) searchEl.value = ``;
+      if (themeEl) themeEl.value = `all`;
+      filterGlossary();
+    }
+
+    function setQuizFilter(mode) {
+      appState.quizFilter = mode;
+      const allBtn = safeGetEl(`quiz-filter-all`);
+      const pendBtn = safeGetEl(`quiz-filter-pending`);
+      if (allBtn) allBtn.classList.toggle(`is-active`, mode === `all`);
+      if (pendBtn) pendBtn.classList.toggle(`is-active`, mode === `pending`);
+      renderQuiz();
+      persistState();
+    }
+
+    function renderQuiz() {
+      const container = safeGetEl(`quiz-list`);
+      if (!container) return;
+
+      const letters = [`A`, `B`, `C`, `D`];
+      const visibleQuestions = QUIZ_QUESTIONS.filter(function(q) {
+        if (appState.quizFilter === `all`) return true;
+        const chosen = appState.quizAnswers[q.id];
+        return typeof chosen !== `number` || chosen !== q.answer;
+      });
+
+      if (visibleQuestions.length === 0) {
+        container.innerHTML = `
+          <div class="aside-box">
+            <p><strong>Excelente desempenho!</strong> Todas as 10 questões do simulado foram respondidas corretamente. Você pode voltar a visualizar todas as questões ou reiniciar o simulado para treinar novamente.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = visibleQuestions.map(function(q, index) {
+        const chosen = appState.quizAnswers[q.id];
+        const answered = typeof chosen === `number`;
+        const isCorrect = answered && chosen === q.answer;
+        const qNum = QUIZ_QUESTIONS.indexOf(q) + 1;
+
+        const optsHtml = q.options.map(function(opt, oIdx) {
+          let cls = `quiz-opt-btn`;
+          if (answered) {
+            if (oIdx === q.answer) cls += ` is-correct`;
+            else if (oIdx === chosen) cls += ` is-wrong`;
+          }
+          return `
+            <button type="button" class="${cls}" onclick="answerQuizQuestion('${q.id}', ${oIdx})">
+              <span class="quiz-letter">${letters[oIdx]})</span>
+              <span>${opt}</span>
+            </button>
+          `;
+        }).join(``);
+
+        let feedbackHtml = ``;
+        if (answered) {
+          feedbackHtml = `
+            <div class="feedback-box ${isCorrect ? `is-correct` : `is-wrong`}">
+              <strong>${isCorrect ? `Resposta correta.` : `Resposta incorreta — alternativa correta: ${letters[q.answer]}.`}</strong>
+              <span>${q.rationale}</span>
+            </div>
+          `;
+        }
+
+        return `
+          <article class="quiz-card" id="card-${q.id}">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-sm);">
+              <span class="index-num">QUESTÃO ${qNum < 10 ? `0` + qNum : qNum}</span>
+              <span class="tag">${q.topic}</span>
+            </div>
+            <p style="font-weight: 600; color: var(--on-surface); max-width: none; margin: 0;">${q.stem}</p>
+            <div class="quiz-options">${optsHtml}</div>
+            ${feedbackHtml}
+          </article>
+        `;
+      }).join(``);
+    }
+
+    function answerQuizQuestion(qId, optIdx) {
+      appState.quizAnswers[qId] = optIdx;
+      renderQuiz();
+      updateProgressUI();
+      persistState();
+    }
+
+    function resetQuiz(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `Confirmar reinício do simulado`;
+        return;
+      }
+      btn.dataset.armed = `false`;
+      btn.textContent = `Reiniciar Simulado`;
+      appState.quizAnswers = {};
+      appState.quizFilter = `all`;
+      setQuizFilter(`all`);
+      updateProgressUI();
+      persistState();
+    }
+
+    function resetAllProgress(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.textContent = `Clique novamente para confirmar`;
+        return;
+      }
+      btn.dataset.armed = `false`;
+      btn.textContent = `Zerar Progresso`;
+      appState = {
+        reviewedModules: [],
+        anthroPhase: `evolucionismo`,
+        resistanceTab: `enraizamento`,
+        matrixFilter: `all`,
+        gramsciNode: `infra`,
+        labIndex: 0,
+        labSolved: {},
+        quizAnswers: {},
+        quizFilter: `all`
+      };
+      renderAll();
+      persistState();
+      const status = safeGetEl(`export-status`);
+      if (status) status.textContent = `Progresso reiniciado com sucesso.`;
+    }
+
+    function exportStudySummary() {
+      const reviewedCount = appState.reviewedModules.length;
+      let quizCorrect = 0;
+      const wrongList = [];
+      QUIZ_QUESTIONS.forEach(function(q, i) {
+        const chosen = appState.quizAnswers[q.id];
+        if (chosen === q.answer) {
+          quizCorrect += 1;
+        } else {
+          wrongList.push(`Questão ${i + 1} (${q.topic}): ${q.rationale}`);
+        }
+      });
+
+      const lines = [
+        `COLÉGIO DIVINA PROVIDÊNCIA — RELATÓRIO DE REVISÃO DE SOCIOLOGIA (1º ANO EM)`,
+        `=========================================================================`,
+        `Módulos revisados: ${reviewedCount} de ${MODULE_IDS.length}`,
+        `Acertos no Simulado: ${quizCorrect} de ${QUIZ_QUESTIONS.length}`,
+        `Casos resolvidos no Laboratório: ${Object.keys(appState.labSolved).length} de ${LAB_CASES.length}`,
+        ``,
+        `Pontos prioritários para revisar antes da prova:`,
+        wrongList.length === 0 ? `- Excelente! Nenhum erro pendente no simulado.` : wrongList.map(function(w) { return `- ${w}`; }).join(`\n`)
+      ];
+      const textContent = lines.join(`\n`);
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === `function`) {
+        window.notebookAppApi.triggerFileDownload({
+          content: textContent,
+          contentType: `text/plain`,
+          encoding: `UTF-8`,
+          filename: `revisao_sociologia_divina_providencia.txt`
+        });
+        const status = safeGetEl(`export-status`);
+        if (status) status.textContent = `Arquivo de revisão exportado.`;
+      } else {
+        const status = safeGetEl(`export-status`);
+        if (status) status.textContent = `Relatório gerado: ${quizCorrect}/${QUIZ_QUESTIONS.length} acertos.`;
+      }
+    }
+
+    function renderAll() {
+      renderAnthroPhase();
+      highlightMatrixRow(appState.matrixFilter || `all`);
+      renderResistance();
+      renderGramsciNode();
+      renderLabCase();
+      filterGlossary();
+      setQuizFilter(appState.quizFilter || `all`);
+      updateProgressUI();
+    }
+
+    function initScrollReveal() {
+      if (!(`IntersectionObserver` in window)) return;
+      const sections = document.querySelectorAll(`.study-section`);
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(`reveal-visible`);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      sections.forEach(function(sec) {
+        sec.classList.add(`reveal-ready`);
+        observer.observe(sec);
+      });
+    }
+
+    async function initApp() {
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === `function`) {
+          const saved = await window.notebookAppApi.getAppState();
+          if (saved && typeof saved === `object`) {
+            appState = Object.assign(appState, saved);
+          }
+        }
+      } catch (err) {
+        // Fallback cleanly to default initial state
+      }
+
+      renderAll();
+      initScrollReveal();
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === `function`) {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener(`DOMContentLoaded`, initApp);
+  </script>
+</body>
+</html>
